@@ -2,10 +2,14 @@ extends Area2D
 
 export(String, FILE, "*.tscn,*.scn") var target_scene
 
+func _ready():
+	$ScreenFader/ColorRect/AnimationPlayer.play("Fade_in")
+	
+	
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if get_overlapping_bodies().size() > 0:
-			next_level()
+			$ScreenFader/ColorRect/AnimationPlayer.play("Fade_out")
 
 
 func next_level():
