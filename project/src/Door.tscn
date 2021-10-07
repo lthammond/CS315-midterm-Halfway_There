@@ -68,6 +68,10 @@ transform = Transform2D( 2, 0, 0, 2, -1100, -650 )
 [node name="ColorRect" type="ColorRect" parent="ScreenFader"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 176.777
+margin_top = 79.196
+margin_right = 176.777
+margin_bottom = 79.1959
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
