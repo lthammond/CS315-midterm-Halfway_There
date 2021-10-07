@@ -13,3 +13,5 @@ func next_level():
 	
 	if next_scene != OK:
 		print("Something went wrong while switching scenes")
+	
+	PlayerPositionThroughDoor.door_name = name

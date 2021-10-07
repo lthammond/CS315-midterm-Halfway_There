@@ -1,12 +1,13 @@
 extends KinematicBody2D
 
 var velocity := Vector2()
-var mass := 10
-var run_speed := 80
+var gravity := 100000
+var run_speed := 150
 var friction := 10
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
+	velocity.y += gravity
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 
