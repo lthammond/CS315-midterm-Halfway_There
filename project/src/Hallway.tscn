@@ -27,6 +27,10 @@ target_scene = "res://src/Bedroom.tscn"
 position = Vector2( 836, 340 )
 target_scene = "res://src/Office.tscn"
 
+[node name="HallwayDoor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2182.51, 338.868 )
+target_scene = "res://src/LivingRoom.tscn"
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -84.0251, 446.676 )
 
