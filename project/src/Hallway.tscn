@@ -22,7 +22,11 @@ position = Vector2( 1836, 340 )
 target_scene = "res://src/Bedroom.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 275.46, 411.072 )
+position = Vector2( 1696.65, 395.953 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_left = 0
+limit_right = 2259
+limit_bottom = 640
+smoothing_enabled = true
