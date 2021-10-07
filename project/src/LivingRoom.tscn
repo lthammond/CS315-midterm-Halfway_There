@@ -19,6 +19,17 @@ centered = false
 position = Vector2( 289.988, 622.226 )
 polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 1215, -14.25, 1215, -622, 1398, -622, 1398, 18 )
 
+[node name="HallwayDoor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 80.6349, 338.919 )
+target_scene = "res://src/Hallway.tscn"
+
+[node name="FrontYardDoor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 332.375, 337.714 )
+target_scene = "res://src/FrontYard.tscn"
+
+[node name="UpperHallwayDoor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 710.135, 341.719 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -84.1322, 442.885 )
 
@@ -28,7 +39,3 @@ limit_left = 0
 limit_right = 1688
 limit_bottom = 640
 smoothing_enabled = true
-
-[node name="HallwayDoor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 80.6349, 338.919 )
-target_scene = "res://src/Hallway.tscn"
