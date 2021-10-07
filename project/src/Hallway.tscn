@@ -8,7 +8,7 @@
 [node name="Hallway" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 centered = false
@@ -23,8 +23,12 @@ polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 1950
 position = Vector2( 1836, 340 )
 target_scene = "res://src/Bedroom.tscn"
 
+[node name="OfficeDoor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 836, 340 )
+target_scene = "res://src/Office.tscn"
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1696.65, 395.953 )
+position = Vector2( -84.0251, 446.676 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

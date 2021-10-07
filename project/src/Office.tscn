@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/backgrounds/officeBackground.png" type="Texture" id=3]
+
+[node name="Office" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bounds"]
+position = Vector2( 290, 622.28 )
+polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 798, -14.25, 798, -622, 830, -622, 830, 18 )
+
+[node name="OfficeDoor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 836, 340 )
+target_scene = "res://src/Hallway.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -67.8822, 451.134 )
