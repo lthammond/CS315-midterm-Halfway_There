@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/backgrounds/hallwayBackground.png" type="Texture" id=1]
+
+[node name="Hallway" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bounds"]
+position = Vector2( 289.988, 622.226 )
+polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 1950, -14.25, 1950, -622, 1973, -622, 1973, 15.852 )
