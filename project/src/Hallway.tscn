@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/backgrounds/hallwayBackground.png" type="Texture" id=1]
+[ext_resource path="res://src/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Player.tscn" type="PackedScene" id=3]
 
 [node name="Hallway" type="Node2D"]
 
@@ -14,3 +16,13 @@ centered = false
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bounds"]
 position = Vector2( 289.988, 622.226 )
 polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 1950, -14.25, 1950, -622, 1973, -622, 1973, 15.852 )
+
+[node name="BedroomDoor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1836, 340 )
+target_scene = "res://src/Bedroom.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 275.46, 411.072 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
