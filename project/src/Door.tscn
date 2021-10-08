@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 41.4451, 261.823 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Fade_in"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -20,8 +20,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Fade_out"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -74,5 +73,5 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenFader/ColorRect"]
-anims/Fade_in = SubResource( 3 )
-anims/Fade_out = SubResource( 2 )
+anims/Fade_in = SubResource( 2 )
+anims/Fade_out = SubResource( 3 )
