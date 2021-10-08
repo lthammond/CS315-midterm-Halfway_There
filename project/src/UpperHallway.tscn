@@ -13,15 +13,19 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="UpperHallwayDoor" parent="." instance=ExtResource( 1 )]
-position = Vector2( 932.342, 338.919 )
-target_scene = "res://src/LivingRoom.tscn"
-
 [node name="Bounds" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bounds"]
 position = Vector2( 290, 622.28 )
 polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 798, -14.25, 798, -622, 830, -622, 830, 18 )
+
+[node name="UpperHallwayDoor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 932.342, 338.919 )
+target_scene = "res://src/LivingRoom.tscn"
+
+[node name="WorkoutRoomDoor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 81.8949, 338.919 )
+target_scene = "res://src/WorkoutRoom.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -73.0754, 451.052 )

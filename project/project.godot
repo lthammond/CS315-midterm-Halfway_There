@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerPositionThroughDoor="*res://src/PlayerPositionThroughDoor.gd"
+GlobalDialogVariables="*res://src/GlobalDialogVariables.gd"
 
 [display]
 
