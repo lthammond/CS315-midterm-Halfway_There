@@ -8,5 +8,4 @@ func _ready():
 			
 	if !GlobalDialogVariables.hallwayTextRead:
 		$HUD/Dialog/HallwayTextLabel.show()
-		yield(get_tree().create_timer(5), "timeout")
-		$HUD/Dialog/HallwayTextLabel.hide()
+		GlobalDialogVariables.hallwayTextRead = true

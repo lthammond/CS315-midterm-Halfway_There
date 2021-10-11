@@ -141,7 +141,7 @@ margin_left = -932.091
 margin_top = -515.407
 margin_right = 234.909
 margin_bottom = 167.593
-color = Color( 0, 0, 0, 0.52549 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -151,7 +151,7 @@ anims/Fade_Dark = SubResource( 1 )
 anims/Fade_light = SubResource( 2 )
 
 [node name="PackageSprite" type="Sprite" parent="Mailbox/Interaction"]
-position = Vector2( -356.869, 431.443 )
+position = Vector2( -356.869, 318.498 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 7 )
 
