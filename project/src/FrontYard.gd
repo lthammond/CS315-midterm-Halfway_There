@@ -8,6 +8,8 @@ func _ready():
 
 
 func _on_Mailbox_start_interaction():
-	print("Hello")
 	$Mailbox/Interaction/AnimationPlayer.play("Fade_Dark")
-	yield(get_tree().create_timer(8), "timeout")
+	yield(get_tree().create_timer(7), "timeout")
+	$Mailbox/Interaction/AnimationPlayer.play("Fade_light")
+	yield(get_tree().create_timer(4.5), "timeout")
+	GlobalDialogVariables.tradingCardsRecieved = true

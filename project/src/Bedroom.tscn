@@ -199,7 +199,7 @@ margin_left = -922.0
 margin_top = -396.0
 margin_right = 245.0
 margin_bottom = 287.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 0.52549 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -210,7 +210,7 @@ anims/Fade_light = SubResource( 2 )
 anims/Zoom_on_tasks = SubResource( 3 )
 
 [node name="CalendarSprite" type="Sprite" parent="Calendar/Interaction"]
-position = Vector2( -302.519, 640.226 )
+position = Vector2( -302.519, 422.984 )
 scale = Vector2( 6.62392, 6.62392 )
 texture = ExtResource( 7 )
 

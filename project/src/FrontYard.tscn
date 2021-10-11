@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/frontYardBackground.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/package.png" type="Texture" id=7]
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade_Dark"
@@ -36,6 +37,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( -356.869, 318.498 ), Vector2( -356.869, 318.498 ), Vector2( -356.869, -172.586 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../HUD/Dialog/InteractionDialog1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Fade_light"
@@ -53,19 +68,19 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CalendarSprite:position")
+tracks/1/path = NodePath("PackageSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 0.353553, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -748.089, -446.497 ), Vector2( -748.089, 901.14 ) ]
+"values": [ Vector2( -356.869, -172.586 ), Vector2( -356.869, 431.443 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("../../HUD/Dialog/InteractDialog2")
+tracks/2/path = NodePath("../../HUD/Dialog/InteractionDialog1")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -78,6 +93,10 @@ tracks/2/keys = {
 "method": "hide"
 } ]
 }
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+font_data = ExtResource( 9 )
 
 [node name="FrontYard" type="Node2D"]
 script = ExtResource( 3 )
@@ -132,10 +151,30 @@ anims/Fade_Dark = SubResource( 1 )
 anims/Fade_light = SubResource( 2 )
 
 [node name="PackageSprite" type="Sprite" parent="Mailbox/Interaction"]
-position = Vector2( -356.869, -172.586 )
+position = Vector2( -356.869, 431.443 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 7 )
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
+
+[node name="Dialog" type="Control" parent="HUD"]
+margin_left = 18.2689
+margin_top = 7.8745
+margin_right = 58.2689
+margin_bottom = 47.8745
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionDialog1" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_text = "My box of trading cards came! I should add them to my collection in the hallway!"
+text = "My box of trading cards came! I should add them to my collection in the hallway!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="start_interaction" from="Mailbox" to="." method="_on_Mailbox_start_interaction"]
