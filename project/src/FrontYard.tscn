@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/frontYardBackground.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/sprites/frontYardMailbox.png" type="Texture" id=5]
 [ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/package.png" type="Texture" id=7]
+[ext_resource path="res://src/HUD.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade_Dark"
@@ -134,5 +135,7 @@ anims/Fade_light = SubResource( 2 )
 position = Vector2( -356.869, -172.586 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 7 )
+
+[node name="HUD" parent="." instance=ExtResource( 8 )]
 
 [connection signal="start_interaction" from="Mailbox" to="." method="_on_Mailbox_start_interaction"]
