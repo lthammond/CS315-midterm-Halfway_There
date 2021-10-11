@@ -3,7 +3,7 @@
 [ext_resource path="res://src/Interactable.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 75.2946, 82.8272 )
+extents = Vector2( 26.1179, 82.8272 )
 
 [node name="Interactable" type="Area2D"]
 script = ExtResource( 1 )

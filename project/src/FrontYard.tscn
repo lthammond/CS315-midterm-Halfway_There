@@ -1,10 +1,82 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/frontYardBackground.png" type="Texture" id=2]
 [ext_resource path="res://src/FrontYard.gd" type="Script" id=3]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/frontYardMailbox.png" type="Texture" id=5]
+[ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/package.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade_Dark"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.52549 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PackageSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -356.869, 318.498 ), Vector2( -356.869, 318.498 ), Vector2( -356.869, -172.586 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fade_light"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CalendarSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( -748.089, -446.497 ), Vector2( -748.089, 901.14 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../HUD/Dialog/InteractDialog2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
 
 [node name="FrontYard" type="Node2D"]
 script = ExtResource( 3 )
@@ -38,3 +110,29 @@ smoothing_enabled = true
 scale = Vector2( 8, 8 )
 texture = ExtResource( 5 )
 centered = false
+
+[node name="Mailbox" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2037.9, 509.536 )
+
+[node name="Interaction" type="Node2D" parent="Mailbox"]
+
+[node name="ColorRect" type="ColorRect" parent="Mailbox/Interaction"]
+margin_left = -932.091
+margin_top = -515.407
+margin_right = 234.909
+margin_bottom = 167.593
+color = Color( 0, 0, 0, 0.52549 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mailbox/Interaction"]
+anims/Fade_Dark = SubResource( 1 )
+anims/Fade_light = SubResource( 2 )
+
+[node name="PackageSprite" type="Sprite" parent="Mailbox/Interaction"]
+position = Vector2( -356.869, -172.586 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 7 )
+
+[connection signal="start_interaction" from="Mailbox" to="." method="_on_Mailbox_start_interaction"]

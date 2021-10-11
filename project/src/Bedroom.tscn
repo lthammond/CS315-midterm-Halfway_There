@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.52549 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Calendar Sprite:position")
+tracks/1/path = NodePath("CalendarSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -81,7 +81,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Calendar Sprite:position")
+tracks/1/path = NodePath("CalendarSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -111,7 +111,7 @@ tracks/2/keys = {
 resource_name = "Zoom_on_tasks"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Calendar Sprite:position")
+tracks/0/path = NodePath("CalendarSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -123,7 +123,7 @@ tracks/0/keys = {
 "values": [ Vector2( -302.519, -67.4951 ), Vector2( -748.089, -446.497 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Calendar Sprite:scale")
+tracks/1/path = NodePath("CalendarSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -213,7 +213,7 @@ anims/Fade_Dark = SubResource( 1 )
 anims/Fade_light = SubResource( 2 )
 anims/Zoom_on_tasks = SubResource( 3 )
 
-[node name="Calendar Sprite" type="Sprite" parent="Calendar/Interaction"]
+[node name="CalendarSprite" type="Sprite" parent="Calendar/Interaction"]
 position = Vector2( -302.519, 640.226 )
 scale = Vector2( 6.62392, 6.62392 )
 texture = ExtResource( 7 )
