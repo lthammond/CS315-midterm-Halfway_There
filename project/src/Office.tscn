@@ -1,10 +1,145 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/backgrounds/officeBackground.png" type="Texture" id=3]
 [ext_resource path="res://src/Office.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/officeChair.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/sprites/computerStarting.png" type="Texture" id=7]
+[ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/computerUpdatingBackground.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/computerScreen.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade_Dark"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.52549 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../../HUD/Dialog/InteractDialog1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fade_light"
+length = 9.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.8, 5.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../../HUD/Dialog/InteractDialog2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ComputerSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.5, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 317.796, -46.821 ), Vector2( 317.796, 633.947 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../../HUD/Dialog/InteractDialog3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 6, 9.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Raise_screen"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 317.796, 592.982 ), Vector2( 317.796, -46.821 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../../HUD/Dialog/InteractDialog1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 21
+font_data = ExtResource( 6 )
 
 [node name="Office" type="Node2D"]
 script = ExtResource( 4 )
@@ -13,6 +148,11 @@ script = ExtResource( 4 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 3 )
 centered = false
+
+[node name="UpdatedScreen" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 31, 39.5 )
+texture = ExtResource( 11 )
 
 [node name="Bounds" type="StaticBody2D" parent="."]
 
@@ -31,3 +171,104 @@ position = Vector2( -67.8822, 451.134 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 5 )
 centered = false
+
+[node name="Computer" parent="." instance=ExtResource( 8 )]
+position = Vector2( 248.541, 425.341 )
+
+[node name="Interaction" type="Node2D" parent="Computer"]
+
+[node name="ColorRect" type="ColorRect" parent="Computer/Interaction"]
+margin_left = -276.0
+margin_top = -432.0
+margin_right = 891.0
+margin_bottom = 251.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Computer/Interaction"]
+anims/Fade_Dark = SubResource( 1 )
+anims/Fade_light = SubResource( 2 )
+anims/Raise_screen = SubResource( 3 )
+
+[node name="ComputerSprite" type="Sprite" parent="Computer/Interaction"]
+position = Vector2( 317.796, 633.947 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 7 )
+
+[node name="ComputerBackground" type="Sprite" parent="Computer/Interaction/ComputerSprite"]
+show_behind_parent = true
+texture = ExtResource( 10 )
+
+[node name="PercentageBar" type="ColorRect" parent="Computer/Interaction/ComputerSprite"]
+show_behind_parent = true
+margin_left = -48.9537
+margin_top = -14.0646
+margin_right = -47.9537
+margin_bottom = 25.9354
+color = Color( 0.0745098, 0.713726, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdatePercentLabel" type="RichTextLabel" parent="Computer/Interaction/ComputerSprite"]
+visible = false
+margin_left = 15.5021
+margin_top = -9.13243
+margin_right = 45.1965
+margin_bottom = 0.867569
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.129412, 0.129412, 0.129412, 1 )
+bbcode_text = "0%"
+text = "0%"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" parent="." instance=ExtResource( 9 )]
+
+[node name="Dialog" type="Control" parent="HUD"]
+margin_left = 18.2689
+margin_top = 7.8745
+margin_right = 58.2689
+margin_bottom = 47.8745
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog1" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "Sure enough, there's an update. I better start it, it shouldn't take long."
+text = "Sure enough, there's an update. I better start it, it shouldn't take long."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog2" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "WHAT THE?! Did the update get stuck halfway through the update?!"
+text = "WHAT THE?! Did the update get stuck halfway through the update?!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog3" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "Fine then, I guess I'll just go workout for a little bit."
+text = "Fine then, I guess I'll just go workout for a little bit."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="start_interaction" from="Computer" to="." method="_on_Computer_start_interaction"]
