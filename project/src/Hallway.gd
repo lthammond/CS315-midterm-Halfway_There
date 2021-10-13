@@ -9,3 +9,13 @@ func _ready():
 	if !GlobalDialogVariables.hallwayTextRead:
 		$HUD/Dialog/HallwayTextLabel.show()
 		GlobalDialogVariables.hallwayTextRead = true
+
+
+func _on_CardCollection_start_interaction():
+	$CardCollection/Interaction/AnimationPlayer.play("Fade_Dark")
+	yield(get_tree().create_timer(5), "timeout")
+	$CardCollection/Interaction/AnimationPlayer.play("Raise_binder")
+	yield(get_tree().create_timer(7), "timeout")
+	$CardCollection/Interaction/AnimationPlayer.play("Fade_light")
+	yield(get_tree().create_timer(6), "timeout")
+	$HUD/Dialog/InteractionDialoge3.hide()

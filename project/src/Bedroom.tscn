@@ -190,7 +190,7 @@ target_scene = "res://src/Hallway.tscn"
 position = Vector2( 257.565, 418.749 )
 
 [node name="Calendar" parent="." instance=ExtResource( 6 )]
-position = Vector2( 903.687, 375.09 )
+position = Vector2( 903.687, 374.341 )
 
 [node name="Interaction" type="Node2D" parent="Calendar"]
 

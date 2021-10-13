@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/backgrounds/hallwayBackground.png" type="Texture" id=1]
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=2]
@@ -6,8 +6,143 @@
 [ext_resource path="res://src/Hallway.gd" type="Script" id=4]
 [ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/tradingCardBinder.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fade_Dark"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.52549 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../../HUD/Dialog/InteractionDialog1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Fade_light"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TradingCardsSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 374.174, -169.42 ), Vector2( 374.174, 325.17 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../HUD/Dialog/InteractionDialoge2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../../HUD/Dialog/InteractionDialoge3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Raise_binder"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TradingCardsSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1.56917, 0.435275 ),
+"update": 0,
+"values": [ Vector2( 374.174, 304.404 ), Vector2( 374.174, -169.42 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../../HUD/Dialog/InteractionDialoge2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../HUD/Dialog/InteractionDialog1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
 
 [sub_resource type="DynamicFont" id=1]
+size = 21
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 21
 font_data = ExtResource( 5 )
 
@@ -23,7 +158,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bounds"]
 position = Vector2( 289.988, 622.226 )
-polygon = PoolVector2Array( -290, 18, -290, -622, -258, -622, -258, -14.25, 1950, -14.25, 1950, -622, 1973, -622, 1973, 15.852 )
+polygon = PoolVector2Array( -290, 18, -290, -622, -130, -622, -130, -14.25, 1950, -14.25, 1950, -622, 1973, -622, 1973, 15.852 )
 
 [node name="BedroomDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1836, 340 )
@@ -47,6 +182,31 @@ limit_right = 2259
 limit_bottom = 640
 smoothing_enabled = true
 
+[node name="CardCollection" parent="." instance=ExtResource( 7 )]
+position = Vector2( 188.821, 521.584 )
+
+[node name="Interaction" type="Node2D" parent="CardCollection"]
+
+[node name="ColorRect" type="ColorRect" parent="CardCollection/Interaction"]
+margin_left = -198.942
+margin_top = -542.953
+margin_right = 968.058
+margin_bottom = 140.047
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CardCollection/Interaction"]
+anims/Fade_Dark = SubResource( 2 )
+anims/Fade_light = SubResource( 3 )
+anims/Raise_binder = SubResource( 4 )
+
+[node name="TradingCardsSprite" type="Sprite" parent="CardCollection/Interaction"]
+position = Vector2( 374.174, 304.404 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 8 )
+
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Dialog" type="Control" parent="HUD"]
@@ -68,3 +228,40 @@ text = "First things first, I should go check the mail."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InteractionDialog1" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_left = -3.39461
+margin_top = 0.236214
+margin_right = 878.336
+margin_bottom = 52.3617
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_text = "I can't wait to open all the packs and finally finish my collection!"
+text = "I can't wait to open all the packs and finally finish my collection!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionDialoge2" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_text = "WHAT?! There were so many duplicates  that I only got half of the collection!"
+text = "WHAT?! There were so many duplicates  that I only got half of the collection!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionDialoge3" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_text = "Oh well. I guess I should go to my office and check my computer for updates."
+text = "Oh well. I guess I should go to my office and check my computer for updates."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="start_interaction" from="CardCollection" to="." method="_on_CardCollection_start_interaction"]
