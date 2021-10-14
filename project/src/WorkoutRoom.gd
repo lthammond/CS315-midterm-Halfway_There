@@ -26,7 +26,7 @@ func _on_FloorMat_start_interaction():
 				$FloorMat/Interaction/PushupSprite.texture = load("res://" + 
 						"assets/sprites/pushup3.png")
 				$PushupSounds.stream = load("res://assets/sounds/" + 
-						"pushUpFall.wav")
+						"pushupFall.wav")
 				$PushupSounds.play()
 
 			else:

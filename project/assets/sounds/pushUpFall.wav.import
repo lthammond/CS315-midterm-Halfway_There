@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/pushUpFall.wav-f39dbeedfbe7ad76e200267743e81054.sample"
+path="res://.import/pushupFall.wav-43be7ca14b8940e28586e38443f35dc2.sample"
 
 [deps]
 
-source_file="res://assets/sounds/pushUpFall.wav"
-dest_files=[ "res://.import/pushUpFall.wav-f39dbeedfbe7ad76e200267743e81054.sample" ]
+source_file="res://assets/sounds/pushupFall.wav"
+dest_files=[ "res://.import/pushupFall.wav-43be7ca14b8940e28586e38443f35dc2.sample" ]
 
 [params]
 
