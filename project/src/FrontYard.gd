@@ -8,10 +8,12 @@ func _ready():
 
 
 func _on_Mailbox_start_interaction():
-	$Player.active = false
-	$Mailbox/Interaction/AnimationPlayer.play("Fade_dark")
-	yield(get_tree().create_timer(7), "timeout")
-	$Mailbox/Interaction/AnimationPlayer.play("Fade_light")
-	yield(get_tree().create_timer(4.5), "timeout")
-	GlobalVariables.trading_cards_recieved = true
-	$Player.active = true
+	if GlobalVariables.calendar_previously_triggered and !GlobalVariables \
+			.trading_cards_recieved:
+		$Player.active = false
+		$Mailbox/Interaction/AnimationPlayer.play("Fade_dark")
+		yield(get_tree().create_timer(7), "timeout")
+		$Mailbox/Interaction/AnimationPlayer.play("Fade_light")
+		yield(get_tree().create_timer(4.5), "timeout")
+		GlobalVariables.trading_cards_recieved = true
+		$Player.active = true
