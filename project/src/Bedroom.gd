@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Calendar_start_interaction():
-	if !GlobalVariables.calendarPreviouslyTriggered:
+	if !GlobalVariables.calendar_previously_triggered:
 		$Player.active = false
 		$Calendar/Interaction/AnimationPlayer.play("Fade_dark")
 		yield(get_tree().create_timer(8), "timeout")
@@ -26,5 +26,5 @@ func _on_Calendar_start_interaction():
 		$Calendar/Interaction/AnimationPlayer.play("Fade_light")
 		yield(get_tree().create_timer(2), "timeout")
 		GlobalVariables.tasks_completed += 1
-		GlobalVariables.calendarPreviouslyTriggered = true
+		GlobalVariables.calendar_previously_triggered = true
 		$Player.active = true

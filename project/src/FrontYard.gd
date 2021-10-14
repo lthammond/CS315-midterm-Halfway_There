@@ -13,5 +13,5 @@ func _on_Mailbox_start_interaction():
 	yield(get_tree().create_timer(7), "timeout")
 	$Mailbox/Interaction/AnimationPlayer.play("Fade_light")
 	yield(get_tree().create_timer(4.5), "timeout")
-	GlobalVariables.tradingCardsRecieved = true
+	GlobalVariables.trading_cards_recieved = true
 	$Player.active = true
