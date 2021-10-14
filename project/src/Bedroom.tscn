@@ -212,6 +212,7 @@ __meta__ = {
 }
 
 [node name="WakeUpTextLabel" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
 custom_fonts/normal_font = SubResource( 4 )

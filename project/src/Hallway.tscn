@@ -9,7 +9,7 @@
 [ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/tradingCardBinder.png" type="Texture" id=8]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Fade_Dark"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
@@ -38,7 +38,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Fade_light"
 length = 2.5
 tracks/0/type = "value"
@@ -94,7 +94,7 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Raise_binder"
 length = 2.0
 tracks/0/type = "value"
@@ -138,7 +138,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
 size = 21
 font_data = ExtResource( 5 )
 
@@ -198,9 +198,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CardCollection/Interaction"]
-anims/Fade_Dark = SubResource( 2 )
-anims/Fade_light = SubResource( 3 )
-anims/Raise_binder = SubResource( 4 )
+anims/Fade_Dark = SubResource( 1 )
+anims/Fade_light = SubResource( 2 )
+anims/Raise_binder = SubResource( 3 )
 
 [node name="TradingCardsSprite" type="Sprite" parent="CardCollection/Interaction"]
 position = Vector2( 374.174, 304.404 )
@@ -222,7 +222,7 @@ __meta__ = {
 visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_text = "First things first, I should go check the mail."
 text = "First things first, I should go check the mail."
 __meta__ = {
@@ -246,7 +246,7 @@ __meta__ = {
 visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_text = "WHAT?! There were so many duplicates  that I only got half of the collection!"
 text = "WHAT?! There were so many duplicates  that I only got half of the collection!"
 __meta__ = {
@@ -257,7 +257,7 @@ __meta__ = {
 visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_text = "Oh well. I guess I should go to my office and check my computer for updates."
 text = "Oh well. I guess I should go to my office and check my computer for updates."
 __meta__ = {

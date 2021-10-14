@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/backgrounds/menubackground1.png" type="Texture" id=2]
@@ -32,6 +32,22 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -135 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "Fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
 [sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 3 )
@@ -56,6 +72,17 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Drop_title = SubResource( 1 )
+anims/Fade_out = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.82843
+margin_bottom = 2.82843
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="CanvasLayer" parent="."]
 offset = Vector2( 0, -100 )
