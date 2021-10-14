@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sprites/tradingCardBinder.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Fade_Dark"
+resource_name = "Fade_dark"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
@@ -198,7 +198,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CardCollection/Interaction"]
-anims/Fade_Dark = SubResource( 1 )
+anims/Fade_dark = SubResource( 1 )
 anims/Fade_light = SubResource( 2 )
 anims/Raise_binder = SubResource( 3 )
 
