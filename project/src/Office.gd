@@ -5,7 +5,7 @@ func _ready():
 		var door_node = find_node(PlayerPositionThroughDoor.door_name)
 		if door_node:
 			$Player.global_position = door_node.global_position
-	if GlobalDialogVariables.update_started:
+	if GlobalVariables.update_started:
 			$Background/UpdatedScreen.show()
 
 
@@ -17,7 +17,7 @@ func _on_Computer_start_interaction():
 	$Computer/Interaction/ComputerSprite.texture = load("res://assets/sprites/computerUpdating.png")
 	$Computer/Interaction/ComputerSprite/UpdatePercentLabel.show()
 	$Background/UpdatedScreen.show()
-	GlobalDialogVariables.update_started = true
+	GlobalVariables.update_started = true
 	for i in range(50):
 		$Computer/Interaction/ComputerSprite/PercentageBar.rect_size.x += 1
 		$Computer/Interaction/ComputerSprite/UpdatePercentLabel.bbcode_text = "%d" % (i + 1)

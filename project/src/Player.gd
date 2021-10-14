@@ -10,10 +10,10 @@ var active := true
 
 func _ready():
 	var room := get_tree().get_current_scene().get_name()
-	if room == "Bedroom" and !GlobalDialogVariables.underwear_deactivated:
+	if room == "Bedroom" and !GlobalVariables.underwear_deactivated:
 		walk = "Underwear_walk"
 		idle = "Underwear_idle"
-		GlobalDialogVariables.underwear_deactivated = true
+		GlobalVariables.underwear_deactivated = true
 	elif room == "WorkoutRoom":
 		walk = "Workout_walk"
 		idle = "Workout_idle"

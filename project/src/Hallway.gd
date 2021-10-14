@@ -6,9 +6,9 @@ func _ready():
 		if door_node:
 			$Player.global_position = door_node.global_position
 			
-	if !GlobalDialogVariables.hallwayTextRead:
+	if !GlobalVariables.hallwayTextRead:
 		$HUD/Dialog/HallwayTextLabel.show()
-		GlobalDialogVariables.hallwayTextRead = true
+		GlobalVariables.hallwayTextRead = true
 
 
 func _on_CardCollection_start_interaction():

@@ -7,11 +7,11 @@ func _ready():
 			$Player.global_position = door_node.global_position
 			
 	yield(get_tree().create_timer(1), "timeout")
-	if !GlobalDialogVariables.wakeUpTextRead:
+	if !GlobalVariables.wakeUpTextRead:
 		$HUD/Dialog/WakeUpTextLabel.show()
 		yield(get_tree().create_timer(5), "timeout")
 		$HUD/Dialog/WakeUpTextLabel.hide()
-		GlobalDialogVariables.wakeUpTextRead = true
+		GlobalVariables.wakeUpTextRead = true
 
 
 
