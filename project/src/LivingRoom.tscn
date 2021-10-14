@@ -1,9 +1,94 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/livingRoomBackground.png" type="Texture" id=2]
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/LivingRoom.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/chairSit.png" type="Texture" id=5]
+[ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/sprites/tvOn.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Cutaway"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3.5, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.52549 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("CutawayText")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.2, 3.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Fade_out"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 0, 4.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 0.52549 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../../HUD/Dialog/InteractDialog4")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 4.5, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+}, {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 21
+font_data = ExtResource( 8 )
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource( 4 )
@@ -40,3 +125,105 @@ limit_left = 0
 limit_right = 1688
 limit_bottom = 640
 smoothing_enabled = true
+
+[node name="Chair" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1464.05, 519.255 )
+
+[node name="Interaction" type="Node2D" parent="Chair"]
+
+[node name="SittingSprite" type="Sprite" parent="Chair/Interaction"]
+visible = false
+position = Vector2( -124, -47.5 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 5 )
+
+[node name="Television" type="Sprite" parent="Chair/Interaction"]
+visible = false
+position = Vector2( -44, -99.3 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 9 )
+
+[node name="ColorRect" type="ColorRect" parent="Chair/Interaction"]
+margin_left = -912.476
+margin_top = -538.866
+margin_right = 254.524
+margin_bottom = 144.134
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Chair/Interaction"]
+anims/Cutaway = SubResource( 1 )
+anims/Fade_out = SubResource( 6 )
+
+[node name="CutawayText" type="RichTextLabel" parent="Chair/Interaction"]
+visible = false
+margin_left = -737.041
+margin_top = -197.375
+margin_right = 317.639
+margin_bottom = 102.625
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_text = "Halfway through the movie"
+text = "Halfway through the movie"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Dialog" type="Control" parent="HUD"]
+margin_left = 18.2689
+margin_top = 7.8745
+margin_right = 58.2689
+margin_bottom = 47.8745
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog1" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "Let's see, what movie should I watch?"
+text = "Let's see, what movie should I watch?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog2" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "Ooh, my favorite movie Revengers: Limitless Fight is on."
+text = "Ooh, my favorite movie Revengers: Limitless Fight is on."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog3" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "It's a little long, but I'm sure it'll be alright."
+text = "It's a little long, but I'm sure it'll be alright."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractDialog4" type="RichTextLabel" parent="HUD/Dialog"]
+visible = false
+margin_right = 881.731
+margin_bottom = 52.1255
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_text = "...zZz... ...ZzZ..."
+text = "...zZz... ...ZzZ..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="start_interaction" from="Chair" to="." method="_on_Chair_start_interaction"]
