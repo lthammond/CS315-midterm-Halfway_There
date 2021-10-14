@@ -33,14 +33,16 @@ func _physics_process(_delta):
 func _process(_delta):
 	velocity.x = clamp(velocity.x, -150, 150)
 
-	if Input.is_action_pressed('move_right') and !Input.is_action_pressed('move_left'):
+	if Input.is_action_pressed('move_right') and \
+			!Input.is_action_pressed('move_left'):
 		if active:
 			velocity.x += run_speed
 			$AnimatedSprite.scale.x = 8
 			if  velocity.y == 0.0:
 				$AnimatedSprite.play(walk)
 
-	if Input.is_action_pressed('move_left') and !Input.is_action_pressed('move_right'):
+	if Input.is_action_pressed('move_left') and \
+			 !Input.is_action_pressed('move_right'):
 		if active:
 			velocity.x -= run_speed
 			$AnimatedSprite.scale.x = -8
