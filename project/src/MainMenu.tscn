@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/backgrounds/menubackground1.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Drop_title"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -100 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Title/StartGame:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -135 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 0, 0.05896 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Drop_title = SubResource( 1 )
+
+[node name="Title" type="CanvasLayer" parent="."]
+offset = Vector2( 0, -100 )
+transform = Transform2D( 1, 0, 0, 1, 0, -100 )
+
+[node name="StartGame" type="CanvasLayer" parent="Title"]
+offset = Vector2( 0, -135 )
+transform = Transform2D( 1, 0, 0, 1, 0, -135 )
+
+[node name="ButtonBackground" type="ColorRect" parent="Title/StartGame"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 100.0
+margin_right = 100.0
+margin_bottom = 137.625
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="Title/StartGame"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -66.0
+margin_top = 100.067
+margin_right = 66.0
+margin_bottom = 136.067
+custom_fonts/font = SubResource( 2 )
+text = "Play"
+flat = true
+
+[node name="TitleBackground" type="ColorRect" parent="Title"]
+anchor_right = 1.0
+margin_bottom = 100.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="RichTextLabel" parent="Title"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -560.0
+margin_top = 25.362
+margin_right = 560.0
+margin_bottom = 125.362
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]Halfway There[/center]"
+text = "Halfway There"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Title/StartGame/PlayButton" to="." method="_on_PlayButton_pressed"]

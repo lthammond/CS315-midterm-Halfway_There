@@ -50,20 +50,6 @@ tracks/2/keys = {
 "method": "show"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("../../HUD/Dialog/WakeUpTextLabel")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "hide"
-} ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Fade_light"
@@ -226,12 +212,11 @@ __meta__ = {
 }
 
 [node name="WakeUpTextLabel" type="RichTextLabel" parent="HUD/Dialog"]
-visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
 custom_fonts/normal_font = SubResource( 4 )
-bbcode_text = "Morning Already? Oh well, at least it's Saturday! I should check the calendar."
-text = "Morning Already? Oh well, at least it's Saturday! I should check the calendar."
+bbcode_text = "Noon already? At least it's Saturday! I should go check the calendar."
+text = "Noon already? At least it's Saturday! I should go check the calendar."
 __meta__ = {
 "_edit_use_anchors_": false
 }
