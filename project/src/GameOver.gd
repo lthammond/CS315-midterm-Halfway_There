@@ -15,4 +15,5 @@ func _ready():
 
 func _on_MainMenuButton_pressed():
 	if get_tree().change_scene("res://src/MainMenu.tscn") != OK:
-		print ("An unexpected error occured while trying to switch to Main Menu scene")
+		print ("An unexpected error occured while trying to switch to Main" +
+			  "Menu scene")
