@@ -31,3 +31,5 @@ func _on_Chair_start_interaction():
 	yield(get_tree().create_timer(6.5), "timeout")
 	$Chair/Interaction/AnimationPlayer.play("Fade_out")
 	yield(get_tree().create_timer(10.5), "timeout")
+	if get_tree().change_scene("res://src/GameOver.tscn") != OK:
+		print ("An unexpected error occured while trying to switch to Game Over scene")
