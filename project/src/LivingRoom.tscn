@@ -43,7 +43,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Fade_out"
 length = 10.0
 tracks/0/type = "value"
@@ -82,7 +82,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 8 )
 
@@ -155,7 +155,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Chair/Interaction"]
 anims/Cutaway = SubResource( 1 )
-anims/Fade_out = SubResource( 6 )
+anims/Fade_out = SubResource( 2 )
 
 [node name="CutawayText" type="RichTextLabel" parent="Chair/Interaction"]
 visible = false
@@ -163,7 +163,7 @@ margin_left = -737.041
 margin_top = -197.375
 margin_right = 317.639
 margin_bottom = 102.625
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_text = "Halfway through the movie"
 text = "Halfway through the movie"
 scroll_active = false

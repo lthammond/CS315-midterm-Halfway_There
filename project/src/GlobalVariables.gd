@@ -11,6 +11,7 @@ var underwear_deactivated := false
 var calendar_previously_triggered := false
 var card_collection_previously_triggered := false
 var update_started := false
+var workout_previously_triggered := false
 
 # Makes sure prerequisites were completed before starting an interaction.
 var trading_cards_recieved := false
