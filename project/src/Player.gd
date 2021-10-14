@@ -24,6 +24,7 @@ func _ready():
 		walk = "Casual_walk"
 		idle = "Casual_idle"
 
+
 func _physics_process(_delta):
 	velocity.y += gravity
 	velocity = move_and_slide(velocity, Vector2(0, -1))
