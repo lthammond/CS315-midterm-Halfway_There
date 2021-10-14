@@ -113,11 +113,11 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 48
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 21
 font_data = ExtResource( 6 )
 
@@ -174,7 +174,7 @@ margin_left = 128.332
 margin_top = -370.865
 margin_right = 279.885
 margin_bottom = -305.045
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_text = "0!"
 text = "0!"
 __meta__ = {
@@ -196,7 +196,7 @@ __meta__ = {
 visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_text = "Alright. Here we go! 10 pushups, easy!"
 text = "Alright. Here we go! 10 pushups, easy!"
 __meta__ = {
@@ -207,7 +207,7 @@ __meta__ = {
 visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_text = "Ouch."
 text = "Ouch."
 __meta__ = {
@@ -218,7 +218,7 @@ __meta__ = {
 visible = false
 margin_right = 881.731
 margin_bottom = 52.1255
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_text = "Whew! What a workout! I think I'm due a nice movie as a reward."
 text = "Whew! What a workout! I think I'm due a nice movie as a reward."
 __meta__ = {
