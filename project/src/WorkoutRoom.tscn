@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/backgrounds/workoutRoomBackground.png" type="Texture" id=1]
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/pushup1.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/sounds/taskCompleteChime.wav" type="AudioStream" id=7]
 [ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sounds/interactChime.wav" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade_Dark"
@@ -224,5 +226,13 @@ text = "Whew! What a workout! I think I'm due a nice movie as a reward."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TaskCompletedSound" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 7 )
+
+[node name="InteractionTriggeredSound" type="AudioStreamPlayer2D" parent="HUD"]
+stream = ExtResource( 10 )
+
+[node name="PushupSounds" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="start_interaction" from="FloorMat" to="." method="_on_FloorMat_start_interaction"]

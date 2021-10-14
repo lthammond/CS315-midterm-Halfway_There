@@ -12,6 +12,7 @@ func _ready():
 func _on_Computer_start_interaction():
 	if GlobalVariables.card_collection_previously_triggered and \
 			!GlobalVariables.update_started:
+		$HUD/InteractionTriggeredSound.play()
 		$Player.active = false
 		$Computer/Interaction/AnimationPlayer.play("Fade_dark")
 		yield(get_tree().create_timer(4), "timeout")
@@ -33,4 +34,5 @@ func _on_Computer_start_interaction():
 		$Computer/Interaction/AnimationPlayer.play("Fade_light")
 		yield(get_tree().create_timer(6), "timeout")
 		GlobalVariables.tasks_completed += 1
+		$HUD/TaskCompletedSound.play()
 		$Player.active = true

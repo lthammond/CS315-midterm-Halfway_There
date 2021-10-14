@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/backgrounds/menubackground1.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sounds/taskCompleteChime.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Drop_title"
@@ -51,6 +52,12 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 3 )
+
+[sub_resource type="InputEventAction" id=5]
+action = "interact"
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 56
@@ -112,11 +119,15 @@ margin_top = 100.067
 margin_right = 66.0
 margin_bottom = 136.067
 custom_fonts/font = SubResource( 3 )
+shortcut = SubResource( 6 )
 text = "Play"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PlayButtonSound" type="AudioStreamPlayer" parent="Title/StartGame"]
+stream = ExtResource( 4 )
 
 [node name="TitleBackground" type="ColorRect" parent="Title"]
 anchor_right = 1.0

@@ -9,6 +9,7 @@ func _ready():
 
 func _on_Chair_start_interaction():
 	if GlobalVariables.workout_previously_triggered:
+		$HUD/InteractionTriggeredSound.play()
 		$Player.hide()
 		$Player.active = false
 		$Chair/Interaction/SittingSprite.show()
@@ -41,6 +42,7 @@ func _on_Chair_start_interaction():
 		$Chair/Interaction/Television.texture = load("res://assets/sprites/" + 
 				"tvShine.png")
 		GlobalVariables.tasks_completed += 1
+		$HUD/TaskCompletedSound.play()
 
 		yield(get_tree().create_timer(6.5), "timeout")
 		$Chair/Interaction/AnimationPlayer.play("Fade_out")

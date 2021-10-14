@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/livingRoomBackground.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://assets/sprites/tvOn.png" type="Texture" id=9]
+[ext_resource path="res://assets/sounds/taskCompleteChime.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/interactChime.wav" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Cutaway"
@@ -225,5 +227,11 @@ text = "...zZz... ...ZzZ..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TaskCompletedSound" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 10 )
+
+[node name="InteractionTriggeredSound" type="AudioStreamPlayer2D" parent="HUD"]
+stream = ExtResource( 11 )
 
 [connection signal="start_interaction" from="Chair" to="." method="_on_Chair_start_interaction"]

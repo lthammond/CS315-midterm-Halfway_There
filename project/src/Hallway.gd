@@ -15,6 +15,7 @@ func _ready():
 func _on_CardCollection_start_interaction():
 	if GlobalVariables.trading_cards_recieved and \
 			!GlobalVariables.card_collection_previously_triggered:
+		$HUD/InteractionTriggeredSound.play()
 		$Player.active = false
 		$CardCollection/Interaction/AnimationPlayer.play("Fade_dark")
 		yield(get_tree().create_timer(5), "timeout")
@@ -25,4 +26,5 @@ func _on_CardCollection_start_interaction():
 		$HUD/Dialog/InteractionDialoge3.hide()
 		GlobalVariables.card_collection_previously_triggered = true
 		GlobalVariables.tasks_completed += 1
+		$HUD/TaskCompletedSound.play()
 		$Player.active = true

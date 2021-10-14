@@ -9,6 +9,7 @@ func _ready():
 	$Labels/Sentence3.show()
 	yield(get_tree().create_timer(3), "timeout")
 	$Labels/Sentence4.show()
+	$FinalSentenceSound.play()
 	yield(get_tree().create_timer(2), "timeout")
 	$MainMenuButton.show()
 
