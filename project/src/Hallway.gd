@@ -24,4 +24,5 @@ func _on_CardCollection_start_interaction():
 		yield(get_tree().create_timer(6), "timeout")
 		$HUD/Dialog/InteractionDialoge3.hide()
 		GlobalVariables.card_collection_previously_triggered = true
+		GlobalVariables.tasks_completed += 1
 		$Player.active = true

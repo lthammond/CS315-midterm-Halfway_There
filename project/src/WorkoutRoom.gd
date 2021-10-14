@@ -35,4 +35,5 @@ func _on_FloorMat_start_interaction():
 		yield(get_tree().create_timer(3), "timeout")
 		$FloorMat/Interaction/AnimationPlayer.play("Fade_light")
 		GlobalVariables.workout_previously_triggered = true
+		GlobalVariables.tasks_completed += 1
 		$Player.active = true

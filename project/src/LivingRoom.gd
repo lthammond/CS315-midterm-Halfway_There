@@ -40,6 +40,7 @@ func _on_Chair_start_interaction():
 				"chairSleep.png")
 		$Chair/Interaction/Television.texture = load("res://assets/sprites/" + 
 				"tvShine.png")
+		GlobalVariables.tasks_completed += 1
 
 		yield(get_tree().create_timer(6.5), "timeout")
 		$Chair/Interaction/AnimationPlayer.play("Fade_out")

@@ -18,10 +18,10 @@ centered = false
 
 [node name="TaskCounterLabel" type="Label" parent="."]
 visible = false
-margin_left = 866.407
-margin_top = 27.179
-margin_right = 1130.41
-margin_bottom = 51.179
+margin_left = 876.813
+margin_top = 9.04358
+margin_right = 1140.81
+margin_bottom = 33.0436
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.317647, 0.796078, 0.290196, 1 )
 text = "Tasks:0/10"

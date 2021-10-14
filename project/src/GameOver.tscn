@@ -61,8 +61,8 @@ margin_top = 204.047
 margin_right = 364.898
 margin_bottom = 284.793
 custom_fonts/normal_font = SubResource( 1 )
-bbcode_text = "Oh well. These things happen sometimes."
-text = "Oh well. These things happen sometimes."
+bbcode_text = "And you only got 5/10 tasks completed. Oh well. These things happen sometimes."
+text = "And you only got 5/10 tasks completed. Oh well. These things happen sometimes."
 
 [node name="Sentence3" type="RichTextLabel" parent="Labels"]
 visible = false

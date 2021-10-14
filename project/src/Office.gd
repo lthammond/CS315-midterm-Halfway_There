@@ -32,4 +32,5 @@ func _on_Computer_start_interaction():
 		yield(get_tree().create_timer(3), "timeout")
 		$Computer/Interaction/AnimationPlayer.play("Fade_light")
 		yield(get_tree().create_timer(6), "timeout")
+		GlobalVariables.tasks_completed += 1
 		$Player.active = true
