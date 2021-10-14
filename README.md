@@ -10,7 +10,7 @@ You wake up at noon and have a few tasks around the house to do. Hopefully you c
 ## Project Report
 ### Reflection
 The midsemester jam was an interesting test of my skills thus far, both with Godot and time management. I am getting pretty comfortable with the engine and have a good idea of where to look to find the things I need concerning it, but my time management definitely needs some work. The greatest challenge with this project was my ambitition versus amount of time I both had and wanted to work on the project. I got a decent head start before break, but fell behind as Wednesday rolled around. That being said, I am still proud of what I have created even though I had to cull a little bit of content to come to a finished state. Because of the shorter amount of time and my lack of confidence in the style department, I am still worried about the style guide and if I missed something despite combing through each scene. On that note, each iteration of each project I like to think my formating and hierarchy of folders and files gets cleaner, but the src folder could have used a few folders to make the bundle of scenes less messy.  
-One last thing I found challenging in regards to this project was how to handle certain variables in Godot that I needed to hold onto even when switching back and forth through many scenes. After looking for a solution, the only one I could come across in a relatively short amount of time was to use a singleton global variable script to house said variables, but I thought I remembered to try and avoid that if possible.
+One last thing I found challenging in regards to this project was how to handle certain variables in Godot that I needed to hold onto even when switching back and forth through many scenes. After looking for a solution, the only one I could come across in a relatively short amount of time was to use a singleton global variable script to house said variables, but I thought I remembered to try and avoid that if possible. The only other potential solution I thought about (way too late into the project) was to make each area of my game exist in one scene, which could potentially work in a game the size of mine, but would probably not scale well with a larger game.
 
 ### Self-Evaluation
 - [X] D-1: The repository link is submitted to Canvas before the project deadline.
@@ -27,7 +27,7 @@ One last thing I found challenging in regards to this project was how to handle 
 - [X] B-3: The game is playable with clear goals and end state.
 - [X] A-1: The game includes a complete traditional player experience loop&mdash;title, gameplay, and ending&mdash;and the player has the option to play again.
 
-With the completion of the README and tagging for release, I believe I have fully completed everything needed to earn an A for the Midterm Ex(j)am
+With the completion of the README and tagging for release, I believe I have fully completed everything needed to earn an A for the Midterm Ex(j)am.
 ## Third-Party Assets
 * [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P#standard-styles), licensed under [SIL Open Font License (OFL)](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)  
 * All other assets created by Landon Hammond
