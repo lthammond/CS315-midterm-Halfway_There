@@ -53,13 +53,13 @@ tracks/0/keys = {
 size = 30
 font_data = ExtResource( 3 )
 
-[sub_resource type="InputEventAction" id=5]
+[sub_resource type="InputEventAction" id=4]
 action = "interact"
 
-[sub_resource type="ShortCut" id=6]
-shortcut = SubResource( 5 )
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 56
 font_data = ExtResource( 3 )
 
@@ -119,7 +119,7 @@ margin_top = 100.067
 margin_right = 66.0
 margin_bottom = 136.067
 custom_fonts/font = SubResource( 3 )
-shortcut = SubResource( 6 )
+shortcut = SubResource( 5 )
 text = "Play"
 flat = true
 __meta__ = {
@@ -144,7 +144,7 @@ margin_left = -560.0
 margin_top = 25.362
 margin_right = 560.0
 margin_bottom = 125.362
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 bbcode_text = "[center]Halfway There[/center]"
 text = "Halfway There"
