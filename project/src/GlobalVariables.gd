@@ -14,3 +14,5 @@ var update_started := false
 # Makes sure prerequisites were completed before starting an interaction.
 var tradingCardsRecieved := false
 
+# Tells HUD how many tasks have been completed.
+var tasks_completed := 0

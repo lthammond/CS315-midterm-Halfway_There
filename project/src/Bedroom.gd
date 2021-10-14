@@ -17,11 +17,14 @@ func _ready():
 
 
 func _on_Calendar_start_interaction():
-	$Player.active = false
-	$Calendar/Interaction/AnimationPlayer.play("Fade_dark")
-	yield(get_tree().create_timer(8), "timeout")
-	$Calendar/Interaction/AnimationPlayer.play("Zoom_on_tasks")
-	yield(get_tree().create_timer(4.5), "timeout")
-	$Calendar/Interaction/AnimationPlayer.play("Fade_light")
-	yield(get_tree().create_timer(2), "timeout")
-	$Player.active = true
+	if !GlobalVariables.calendarPreviouslyTriggered:
+		$Player.active = false
+		$Calendar/Interaction/AnimationPlayer.play("Fade_dark")
+		yield(get_tree().create_timer(8), "timeout")
+		$Calendar/Interaction/AnimationPlayer.play("Zoom_on_tasks")
+		yield(get_tree().create_timer(4.5), "timeout")
+		$Calendar/Interaction/AnimationPlayer.play("Fade_light")
+		yield(get_tree().create_timer(2), "timeout")
+		GlobalVariables.tasks_completed += 1
+		GlobalVariables.calendarPreviouslyTriggered = true
+		$Player.active = true
