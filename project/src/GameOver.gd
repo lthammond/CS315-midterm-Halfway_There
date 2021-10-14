@@ -15,8 +15,7 @@ func _ready():
 
 
 func _on_MainMenuButton_pressed():
-	GlobalVariables.underwear_deactivated = false
-	GlobalVariables.tasks_completed = 0
+	GlobalVariables.reset_GlobalVariables()
 	if get_tree().change_scene("res://src/MainMenu.tscn") != OK:
 		print ("An unexpected error occured while trying to switch to Main" +
 			  "Menu scene")

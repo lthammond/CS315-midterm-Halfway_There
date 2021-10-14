@@ -18,3 +18,14 @@ var trading_cards_recieved := false
 
 # Tells HUD how many tasks have been completed.
 var tasks_completed := 0
+
+func reset_GlobalVariables():
+	 wakeUpTextRead = false
+	 hallwayTextRead = false
+	 underwear_deactivated = false
+	 calendar_previously_triggered = false
+	 card_collection_previously_triggered = false
+	 update_started = false
+	 workout_previously_triggered = false
+	 trading_cards_recieved = false
+	 tasks_completed = 0
